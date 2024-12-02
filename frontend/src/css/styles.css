@@ -1,0 +1,112 @@
+.boton-navbar:hover {
+    background-color: darkslategray;
+}
+
+.boton-tag {
+    background-color: grey;
+    color: white;
+}
+
+.boton-tag:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+.boton-volver:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-outline-primary:active {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.card-body {
+    white-space: wrap;
+    min-height: 100px;
+}
+
+.group {
+    display: inline-block;
+    width: 200px;
+}
+
+.groups {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.item-card-body {
+    white-space: wrap;
+    min-height: 170px;
+}
+
+.item-in-home {
+    display: inline-block;
+    width: 300px;
+}
+
+.items-in-home {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.my-card {
+    display: inline-block;
+}
+
+.my-cards {
+    overflow-x: auto;
+}
+
+.scrollable {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrollable-p {
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+.scrolled {
+    display: inline-block;
+}
+
+.valoracion-inexistente {
+    background-color: grey;
+}
+
+.valoracion-negativa {
+    background-color: rgb(252, 70, 70);
+}
+
+.valoracion-mixta {
+    background-color: rgb(255, 230, 0);
+}
+
+.valoracion-positiva {
+    background-color: lightgreen;
+}
+
+.valoracion-muy-positiva {
+    background-color: rgb(0, 201, 84);
+}
+
+.ver-todos {
+    color: rgb(30, 30, 30);
+}
+
+.ver-todos:hover {
+    color: rgb(30, 30, 30);
+}
