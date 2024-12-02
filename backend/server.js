@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -25,7 +26,7 @@ function makeid(length) {
 
 // Conexión a MongoDB
 
-mongoose.connect('mongodb+srv://<username>:<password>@<url>/?retryWrites=true&w=majority&appName=GameForum', {
+mongoose.connect('mongodb+srv://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASSWORD + '@' + process.env.MONGO_URL + '/?retryWrites=true&w=majority&appName=GameForum', {
   dbName: 'tfg',
   useNewUrlParser: true,
   useUnifiedTopology: true
