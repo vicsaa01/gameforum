@@ -44,10 +44,8 @@ const App = () => {
   const [showNav, setShowNav] = useState(true);
   return (
     <Router>
-        <body class="h-100">
-            <div class="container-fluid h-100 d-flex flex-column">
-                {showNav && <Navbar isNavShown={showNav} />}
-                <Routes>
+            {showNav && <Navbar isNavShown={showNav} />}
+            <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/music" element={<Music />} />
                     <Route path="/games" element={<Games />} />
@@ -79,10 +77,8 @@ const App = () => {
                     <Route path="/edit-user" element={<EditUser />} />
                     <Route path="/invites" element={<Invites />} />
                     <Route path="/invite-user" element={<InviteUser />} />
-                </Routes>
-                {showNav && <Footer />}
-            </div>
-        </body>
+            </Routes>
+            {showNav && <Footer />}
     </Router>
   );
 };

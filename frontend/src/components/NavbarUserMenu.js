@@ -64,17 +64,15 @@ const NavbarUserMenu = (props) => {
     if (session != undefined) {
         return(
             <>
-                <a class="me-4" href={"/user?id=" + myUser._id}>
-                    <img src={'/img/' + myUser.avatar} class="rounded-circle" width="40" height="40" />
+                <a href={"/user?id=" + myUser._id}>
+                    <img src={'/img/' + myUser.avatar} class="rounded-circle mt-2" width="40" height="40" />
                 </a>
             </>
         )
     } else {
         return(
             <>
-                <a class="btn bg-white text-dark me-4" href="/login" onClick={handleLogin}>
-                    Iniciar sesión
-                </a>
+                <a class="btn bg-white text-dark fw-bold mt-2 p-1 boton-login" href="/login" onClick={handleLogin}>Login</a>
                 <ToLogin/>
             </>
         )

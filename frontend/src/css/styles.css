@@ -1,3 +1,7 @@
+.boton-login {
+    height: 40px;
+}
+
 .boton-navbar:hover {
     background-color: darkslategray;
 }
