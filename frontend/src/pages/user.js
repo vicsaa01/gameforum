@@ -30,7 +30,6 @@ const User = () => {
                 alert(data.message);
                 window.location.href = '/';
             } else {
-                console.log(data);
                 setMyUser(data);
     
                 let yyyy = data.created_at.substring(0,4);

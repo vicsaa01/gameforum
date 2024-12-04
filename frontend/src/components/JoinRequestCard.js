@@ -42,7 +42,6 @@ const JoinRequestCard = (props) => {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
                 setUser(data);
             });
           });

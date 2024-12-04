@@ -47,7 +47,6 @@ const Comment = (props) => {
                         return res.json();
                     })
                     .then((data) => {
-                        console.log(data);
                         setMyUser(data);
                         setAnon(false);
                     });

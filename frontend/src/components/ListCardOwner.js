@@ -14,7 +14,6 @@ const ListCardOwner = (props) => {
             return res.json();
           })
           .then((data) => {
-            console.log(data);
             setOwner(data);
           });
     }, [baseUrl + '/user?id=' + props.id])

@@ -24,7 +24,6 @@ const ListCard = (props) => {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
                 setMyUser(data);
             });
           });
