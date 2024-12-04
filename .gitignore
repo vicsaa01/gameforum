@@ -1,6 +1,7 @@
 backend/.env
-frontend/src/url.js
+frontend/.env
 
 backend/node_modules/
 frontend/node_modules/
+
 frontend/build/
