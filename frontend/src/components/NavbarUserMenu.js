@@ -65,7 +65,7 @@ const NavbarUserMenu = (props) => {
         return(
             <>
                 <a href={"/user?id=" + myUser._id}>
-                    <img src={'/img/' + myUser.avatar} class="rounded-circle" width="40" height="40" />
+                    <img src={'/img/' + myUser.avatar} class="rounded-circle mt-lg-0 mt-md-0 mt-sm-0 mt-2" width="40" height="40" />
                 </a>
             </>
         )

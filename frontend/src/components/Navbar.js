@@ -10,7 +10,7 @@ const Navbar = (props) => {
       <>
         <nav class="bg-dark">
           <div class="row w-100 p-2 pe-0">
-            <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+            <div class="col-lg-1 col-md-1 col-sm-2 col-3">
               <a class="navbar-brand" href="/">
                 <img class="mt-1" src='/img/logo.png' width="50" height="50"/>
               </a>
@@ -40,8 +40,12 @@ const Navbar = (props) => {
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/community">Comunidad</a>
             </div>
 
-            <div class="col-lg-1 col-md-2 col-sm-3 col-10 text-start d-block d-sm-none">
+            <div class="col-lg-1 col-md-2 col-sm-3 col-7 text-start d-block d-sm-none">
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/community">Comunidad</a>
+            </div>
+
+            <div class="col-lg-0 col-md-0 col-sm-0 col-2 d-block d-sm-none d-flex justify-content-end">
+              <NavbarUserMenu isNavShown={props.isNavShown}/>
             </div>
 
             <div class="col-lg-5 col-md-5 col-sm-7 col-12 d-flex justify-content-end">
@@ -49,7 +53,7 @@ const Navbar = (props) => {
                   <div class="row mt-2">
                     <div class="col-lg-3 col-md-2 col-sm-2 col-1"></div>
 
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-6 p-0 m-0">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-9 p-0 m-0">
                       <input type="text" class="form-control me-1" placeholder="Buscar..." name="search"/>
                     </div>
                     
@@ -59,8 +63,11 @@ const Navbar = (props) => {
                       </button>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-4 d-flex justify-content-end">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-1 d-none d-sm-block">
+                      <div class="w-100 d-flex justify-content-end">
                       <NavbarUserMenu isNavShown={props.isNavShown}/>
+                      </div>
+                      
                     </div>
                   </div>
                 </form>
