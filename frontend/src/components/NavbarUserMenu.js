@@ -65,14 +65,14 @@ const NavbarUserMenu = (props) => {
         return(
             <>
                 <a href={"/user?id=" + myUser._id}>
-                    <img src={'/img/' + myUser.avatar} class="rounded-circle mt-2" width="40" height="40" />
+                    <img src={'/img/' + myUser.avatar} class="rounded-circle" width="40" height="40" />
                 </a>
             </>
         )
     } else {
         return(
             <>
-                <a class="btn bg-white text-dark fw-bold mt-2 p-1 boton-login" href="/login" onClick={handleLogin}>Login</a>
+                <a class="btn bg-white text-dark fw-bold pt-2 boton-login" href="/login" onClick={handleLogin}>Inicio</a>
                 <ToLogin/>
             </>
         )

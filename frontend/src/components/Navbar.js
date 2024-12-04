@@ -44,24 +44,26 @@ const Navbar = (props) => {
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/community">Comunidad</a>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-10 d-flex justify-content-end">
-                <form action="/search" onSubmit={validateSearch}>
-                  <div class="row mt-2 ps-2">
-                    <div class="col-lg-11 col-md-10 col-sm-8 col-9 p-0 m-0">
+            <div class="col-lg-5 col-md-5 col-sm-7 col-12 d-flex justify-content-end">
+                <form class="w-100" action="/search" onSubmit={validateSearch}>
+                  <div class="row mt-2">
+                    <div class="col-lg-3 col-md-2 col-sm-2 col-1"></div>
+
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-6 p-0 m-0">
                       <input type="text" class="form-control me-1" placeholder="Buscar..." name="search"/>
                     </div>
                     
-                    <div class="col-lg-1 col-md-2 col-sm-4 col-3 p-0 m-0">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-1 p-0 m-0">
                       <button type="submit" class="btn rounded bg-white">
                         <img class="pb-1" src='/img/search.png' width="15" height="20"/>
                       </button>
                     </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4 d-flex justify-content-end">
+                      <NavbarUserMenu isNavShown={props.isNavShown}/>
+                    </div>
                   </div>
                 </form>
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1 col-2 d-flex justify-content-end">
-              <NavbarUserMenu isNavShown={props.isNavShown}/>
             </div>
           </div>
         </nav>
