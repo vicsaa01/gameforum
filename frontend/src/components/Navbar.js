@@ -1,10 +1,14 @@
 import React from "react";
-
+import { useState } from "react";
 import NavbarUserMenu from "./NavbarUserMenu";
 
 const Navbar = (props) => {
 
-  const validateSearch = () => {}
+  var [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  }
 
     return(
       <>
@@ -24,15 +28,15 @@ const Navbar = (props) => {
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/games">Juegos</a>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-2 col-2 text-center d-none d-lg-block">
+            <div class="col-lg-1 col-md-0 col-sm-2 col-2 text-center d-none d-lg-block">
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/movies">Cine</a>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-2 col-2 text-center d-none d-lg-block">
+            <div class="col-lg-1 col-md-0 col-sm-2 col-2 text-center d-none d-lg-block">
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/tv">TV</a>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-2 col-2 text-center d-none d-lg-block">
+            <div class="col-lg-1 col-md-0 col-sm-2 col-2 text-center d-none d-lg-block">
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/books">Libros</a>
             </div>
 
@@ -40,38 +44,34 @@ const Navbar = (props) => {
               <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/community">Comunidad</a>
             </div>
 
-            <div class="col-lg-1 col-md-2 col-sm-3 col-7 text-start d-block d-sm-none">
-              <a class="boton-navbar btn pt-3 pb-3 rounded text-white" href="/community">Comunidad</a>
-            </div>
-
-            <div class="col-lg-0 col-md-0 col-sm-0 col-2 d-block d-sm-none d-flex justify-content-end">
-              <NavbarUserMenu isNavShown={props.isNavShown}/>
-            </div>
-
-            <div class="col-lg-5 col-md-5 col-sm-7 col-12 d-flex justify-content-end">
-                <form class="w-100" action="/search" onSubmit={validateSearch}>
+            <div class="col-lg-5 col-md-5 col-sm-7 col-6 d-flex justify-content-end">
+                <form class="w-100" action="/search">
                   <div class="row mt-2">
-                    <div class="col-lg-3 col-md-2 col-sm-2 col-1"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-1 col-0"></div>
 
                     <div class="col-lg-5 col-md-5 col-sm-5 col-9 p-0 m-0">
                       <input type="text" class="form-control me-1" placeholder="Buscar..." name="search"/>
                     </div>
                     
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-1 p-0 m-0">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-3 p-0 m-0">
                       <button type="submit" class="btn rounded bg-white">
                         <img class="pb-1" src='/img/search.png' width="15" height="20"/>
                       </button>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-1 d-none d-sm-block">
-                      <div class="w-100 d-flex justify-content-end">
-                      <NavbarUserMenu isNavShown={props.isNavShown}/>
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-0 d-none d-sm-block">
+                      <div class="text-end">
+                        <NavbarUserMenu isNavShown={props.isNavShown}/>
                       </div>
-                      
                     </div>
                   </div>
                 </form>
             </div>
+
+            <div class="col-lg-0 col-md-0 col-sm-0 col-3 d-block d-sm-none mt-2 text-end">
+              <a class="text-white" onClick={toggleMenu}><img src="/img/menu-icon.png" alt="Menu icon" height="40"></img></a>
+            </div>
+
           </div>
         </nav>
       </>

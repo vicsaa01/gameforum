@@ -70,10 +70,10 @@ const NavbarUserMenu = (props) => {
         )
     } else {
         return(
-            <>
+            <div class="d-flex justify-content-end text-end">
                 <a class="btn bg-white text-dark fw-bold pt-2 boton-login" href="/login" onClick={handleLogin}>Inicio</a>
                 <ToLogin/>
-            </>
+            </div>
         )
     }
 }
