@@ -1,13 +1,48 @@
 import React from "react";
 import { useState } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 import NavbarUserMenu from "./NavbarUserMenu";
 
 const Navbar = (props) => {
 
+  const location = useLocation();
+  const url = location.pathname;
+  
+  const queryParameters = new URLSearchParams(window.location.search)
+  const id = queryParameters.get("id")
+  const search = queryParameters.get("search")
+
   var [showMenu, setShowMenu] = useState(false);
+  var [toLogin, setToLogin] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+    document.getElementById("menuIcon").src = showMenu ? "/img/menu-icon.png" : "/img/cancel-icon.png";
+  }
+
+  const closeMenu = () => {
+    setShowMenu(false);
+    document.getElementById("menuIcon").src = "/img/cancel-icon.png";
+  }
+
+  const handleLogin = () => {
+    setToLogin(true);
+  }
+  
+  const ToLogin = () => {
+          if (toLogin == true) {
+              setToLogin(false);
+  
+              if (url == null || url == "") url = "/" // default url <- error que vio David (Linux no deja guardar URL?)
+  
+              if (id == null)
+                  if (search == null)
+                      return <Navigate to="/login" state={{prevUrl: url, has_id: false, id: id, has_search: false, search: search}} />;
+                  else
+                      return <Navigate to="/login" state={{prevUrl: url, has_id: false, id: id, has_search: true, search: search}} />;
+              else
+                  return <Navigate to="/login" state={{prevUrl: url, has_id: true, id: id, has_search: false, search: search}} />;
+          }
   }
 
     return(
@@ -69,11 +104,42 @@ const Navbar = (props) => {
             </div>
 
             <div class="col-lg-0 col-md-0 col-sm-0 col-3 d-block d-sm-none mt-2 text-end">
-              <a class="text-white" onClick={toggleMenu}><img src="/img/menu-icon.png" alt="Menu icon" height="40"></img></a>
+              <a class="text-white" onClick={toggleMenu}><img id="menuIcon" src="/img/menu-icon.png" alt="Menu icon" height="40"></img></a>
             </div>
-
           </div>
         </nav>
+
+        {showMenu &&
+        <div class="fixed w-100 col bg-dark">
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/music" onClick={closeMenu}>Música</a>
+          </div>
+
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/games" onClick={closeMenu}>Juegos</a>
+          </div>
+
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/movies" onClick={closeMenu}>Cine</a>
+          </div>
+
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/tv" onClick={closeMenu}>TV</a>
+          </div>
+
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/books" onClick={closeMenu}>Libros</a>
+          </div>
+
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/community" onClick={closeMenu}>Comunidad</a>
+          </div>
+
+          <div class="m-0 row text-start">
+            <a class="btn text-white" href="/login" onClick={handleLogin}>Iniciar sesión</a>
+            <ToLogin/>
+          </div>
+        </div>}
       </>
     );
 };
